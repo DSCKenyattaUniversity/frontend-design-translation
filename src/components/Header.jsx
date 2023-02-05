@@ -1,13 +1,28 @@
-import "./Header.css";
-// import { ReactComponent as Menu } from "../assets/instagram.svg";
-import menuIcon from "../assets/instagram.svg";
+import styled from "styled-components";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header () {
     return (
-        <header className="Header">
+        <StyledHeader>
             <a href="/" alt="Edie" className="logo">Edie</a>
-            {/* <Menu className="menu-icon" /> */}
-            <img src={menuIcon} alt="menu-icon" className="menu-icon" />
-        </header>
+            <MenuIcon />
+        </StyledHeader>
     )
 }
+
+const StyledHeader = styled.header`
+    background-color: #2D9CDB;
+    color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+
+    & .logo {
+        display: block;
+        font-size: 24px;
+        font-weight: 800;
+        text-decoration: none; 
+        color: inherit;
+    }
+`

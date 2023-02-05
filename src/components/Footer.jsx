@@ -3,6 +3,7 @@ import styled from "styled-components";
 import linkedin from "../assets/linkedin.svg"
 import instagram from "../assets/instagram.svg"
 import twitter from "../assets/twitter.svg"
+import EmailInput from "./EmailInput";
 
 export default function Footer() {
     return (
@@ -25,12 +26,7 @@ export default function Footer() {
                 </div>
                 <div className="contact-div">
                     <p style={{color: "#828282", fontSize: 10}}>Want us to contact you?</p>
-                    <div className="input">
-                        <input type="text" placeholder="Email" />
-                        <button className="input-btn">
-                            Join
-                        </button>
-                    </div>
+                    <EmailInput bgColor="#F2F2F2" />
                 </div>
             </div>
             <p className="bottom">
@@ -81,36 +77,6 @@ const StyledFooter = styled.footer`
             .icons {
                 display: flex;
                 gap: 0.75rem; /* 0.75rem = 12px */
-            }
-        }
-
-        .contact-div {
-            .input {
-                background-color: white;
-                border-radius: 12px;
-                padding: 0.25rem; /* 4px */
-                display: flex;
-                justify-content: flex-between;
-                align-items: center;
-                font-family: inherit;
-                
-                input {
-                    border: none;
-                    width: 100%;
-                    margin-left: 1rem;
-                    font-family: inherit;
-                }
-                
-                button {
-                    border: none;
-                    border-radius: 12px;
-                    padding: 12px 20px;
-                    background-color: #2D9CDB;
-                    color: #F2F2F2;
-                    font-weight: 500;
-                    font-family: inherit;
-                    cursor: pointer;
-                }
             }
         }
     }

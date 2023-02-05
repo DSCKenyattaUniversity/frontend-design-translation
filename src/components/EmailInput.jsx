@@ -8,7 +8,7 @@ export default function EmailInput ({ bgColor="#F2F2F2" }) {
     const onJoinClick = () => {
         const email = inputRef.current.value;
         if (email) {
-            prompt(`Your email is ${email}`);
+            alert(`Your email is ${email}`);
         }
     }
 
@@ -34,9 +34,9 @@ const StyledDiv = styled.div`
     input {
         border: none;
         width: 100%;
-        margin-left: 1rem;
+        padding: 12px 20px 12px 1rem;
         font-family: inherit;
-        background: none;
+        background: none;        
     }
 
     button {

@@ -39,7 +39,12 @@ export default function Main() {
 const StyledMain = styled.main`
     padding: 2rem;
     
-    #home {}
+    #home {
+        .hero-image {
+            width: 100%;
+            border-radius: 18px;
+        }
+    }
 
     #services {
         .row {

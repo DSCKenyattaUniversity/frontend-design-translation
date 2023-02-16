@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
@@ -13,7 +13,8 @@
 
 	// nohup - prevents process from being killed after 15mins
 	// & - allows process to run in the background after container is started
-	"postStartCommand": "nohup bash -c 'npm start &'",
+	// "postStartCommand": "nohup bash -c 'npm start' > /dev/null 2>&1",
+	"postStartCommand": "bash -c 'npm start'",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -21,7 +22,16 @@
 			"openFiles": ["README.md", "src/App.js"]
 		},
 		"vscode": {
-			//"settings": {},
+			"settings": {
+				"editor.tabSize": 4,
+				"prettier.tabWidth": 4,
+				"prettier.useTabs": true,
+				"editor.detectIndentation": false,
+				"editor.formatOnSave": true,
+				"editor.formatOnSaveMode": "file",
+				"editor.formatOnPaste": false,
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			},
 			//"devPort": {},
 			// Specify which VS Code extensions to install (List of IDs)
 			"extensions": [
@@ -40,7 +50,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
-		"ghcr.io/devcontainers-contrib/features/npm-package:1": {}
+		"ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {}
 	}
 }

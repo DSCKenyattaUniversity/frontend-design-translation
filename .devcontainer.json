@@ -1,7 +1,0 @@
-{
-    "onCreateCommand": "npm install",
-    "postCreateCommand": {
-        "server": "npm start",
-        // "db": ["mysql", "-u", "root", "-p", "my database"]
-    }
-}

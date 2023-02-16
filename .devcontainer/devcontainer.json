@@ -13,8 +13,7 @@
 
 	// nohup - prevents process from being killed after 15mins
 	// & - allows process to run in the background after container is started
-	// "postStartCommand": "nohup bash -c 'npm start' > /dev/null 2>&1",
-	"postStartCommand": "bash -c 'npm start'",
+	"postStartCommand": "nohup bash -c 'npm start' > /dev/null 2>&1",
 
 	// Configure tool-specific properties.
 	"customizations": {

@@ -9,9 +9,11 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	// "postCreateCommand": "npm install; npm install -g ngrok",
 
-	"postStartCommand": "npm start",
+	// nohup - prevents process from being killed after 15mins
+	// & - allows process to run in the background after container is started
+	"postStartCommand": "nohup bash -c 'npm start &'",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -37,6 +39,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {}
+		"ghcr.io/devcontainers/features/node": {},
+		"ghcr.io/meaningful-ooo/devcontainer-features/fish": {}
 	}
 }

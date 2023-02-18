@@ -82,6 +82,11 @@ const StyledFooter = styled.footer`
 			.icons {
 				display: flex;
 				gap: 0.75rem; /* 0.75rem = 12px */
+
+				img {
+					width: 1.5rem; /* 24px  */
+					height: 1.5rem; /* 24px  */
+				}
 			}
 		}
 	}
@@ -97,7 +102,6 @@ const StyledFooter = styled.footer`
 
 		span {
 			font-weight: bold;
-			font-style: underline;
 			text-decoration: underline;
 			cursor: pointer;
 		}

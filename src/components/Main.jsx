@@ -268,11 +268,13 @@ const StyledMain = styled.main`
 				font-weight: 500;
 				font-size: 1.5rem; /* 24px */
 				margin-bottom: 24px;
+				line-height: 36px;
+				color: #333333;
 			}
 
 			&__client {
 				display: flex;
-				gap: 30px;
+				gap: 1.5rem; /* 24px */
 
 				.client-img {
 					width: 82px;
@@ -281,14 +283,16 @@ const StyledMain = styled.main`
 				}
 
 				.client-name {
+					display: block;
 					font-weight: 500;
-					font-size: 1.5rem; /* 24px */
+					font-size: 1.25rem; /* 20px */
 					margin-bottom: 12px;
 					color: #333;
 				}
 
 				.company {
-					font-size: 18px;
+					display: block;
+					font-size: 0.875rem; /* 14px */
 					font-weight: 500;
 					color: #828282;
 				}

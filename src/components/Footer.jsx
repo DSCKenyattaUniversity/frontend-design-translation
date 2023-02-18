@@ -16,7 +16,7 @@ export default function Footer() {
                     <a href="#clients">Clients</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div className="flex-mid">
+                <div className="flex-mid" id="contact">
                     <p className="edie">Edie</p>
                     <div className="icons">
                         <img src={linkedin} alt="alt" />

@@ -83,18 +83,20 @@ export default function Main() {
 					type="Front End application"
 					name="Juice product homepage"
 				/>
-				<p className="see-more" onClick={onSeeMoreClick}>
+				<button className="see-more" onClick={onSeeMoreClick}>
 					see more ➡
-				</p>
+				</button>
 			</section>
 			<section id="our-team">
-				<h3>Meet the team</h3>
-				<h2>We are chilled and a laidback team</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<h3 className="subtitle">Meet the team</h3>
+				<h2 className="title">We are a chilled and laidback team</h2>
+				<p className="content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</p>
 				<div className="img-container">
-					<img src={person1} alt="person 1" />
-					<img src={person2} alt="person 2" />
-					<img src={person3} alt="person 3" />
+					<img src={person3} className="img-1" alt="person 1" />
+					<img src={person1} className="img-2" alt="person 2" />
+					<img src={person2} className="img-3" alt="person 3" />
 				</div>
 			</section>
 			<section id="clients">
@@ -150,7 +152,7 @@ const StyledMain = styled.main`
 			width: 100%;
 			height: 145px;
 			border-radius: 18px;
-			margin-bottom: 1.5rem; /* 24px */
+			margin-bottom: 1.375rem; /* 22px */
 			object-fit: cover;
 			object-position: center;
 		}
@@ -191,9 +193,72 @@ const StyledMain = styled.main`
 		}
 
 		.see-more {
+			padding: 0;
+			background: none;
+			border: none;
 			color: #2d9cdb;
 			font-size: 18px;
 			font-weight: 500;
+			font-family: inherit;
+			cursor: pointer;
+		}
+	}
+
+	#our-team {
+		.subtitle {
+			font-weight: 500;
+			font-size: 1.125rem; /* 18px */
+			line-height: 27px;
+			color: #eb5757;
+			margin-bottom: 0.5rem; /* 8px */
+		}
+		.title {
+			font-weight: 500;
+			font-size: 2.25rem; /* 36px */
+			line-height: 54px;
+			color: #333333;
+		}
+		.content {
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 24px;
+			color: #4f4f4f;
+			margin-bottom: 2.25rem; /* 36px */
+		}
+		.img-container {
+			display: grid;
+			gap: 0.5rem; /* 8px */
+			// grid-template-areas:
+			// 	". . . . . b b b ."
+			// 	"a a a a a b b b ."
+			// 	"a a a a a b b b ."
+			// 	"a a a a a c c c c"
+			// 	"a a a a a c c c c"
+			// 	"a a a a a c c c c"
+			// 	". . . . . c c c c";
+			grid-template-columns: repeat(17, 1fr);
+			grid-template-rows: repeat(15, 1fr);
+
+			img {
+				border-radius: 24px;
+				display: block;
+			}
+
+			.img-1 {
+				grid-area: a;
+				grid-column: 1 / span 9;
+				grid-row: 4 / span 9;
+			}
+			.img-2 {
+				grid-area: b;
+				grid-column: 10 / span 7;
+				grid-row: 1 / span 7;
+			}
+			.img-3 {
+				grid-area: c;
+				grid-column: 10 / span 8;
+				grid-row: 8 / span 8;
+			}
 		}
 	}
 

@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live site
+
+[https://gdsc-web-fdt.netlify.app](https://gdsc-web-fdt.netlify.app)
+
 ## Available Scripts
 
 In the project directory, you can run:

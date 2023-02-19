@@ -5,15 +5,29 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
+	"hostRequirements": {
+		"cpus": 4
+	},
+
+	"waitFor": "onCreateCommand",
+
+	"updateContentCommand": "npm install",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
+	"postCreateCommand": "",
 
-	// nohup - prevents process from being killed after 15mins
-	// & - allows process to run in the background after container is started
-	// "postStartCommand": "nohup bash -c 'npm start &'",
+	"postAttachCommand": {
+		"server": "npm start"
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Application",
+			"onAutoForward": "openPreview"
+		}
+	},
 
 	// Configure tool-specific properties.
 	"customizations": {

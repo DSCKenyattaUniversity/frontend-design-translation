@@ -42,9 +42,13 @@
 				"editor.detectIndentation": false,
 				"editor.formatOnSave": true,
 				"editor.formatOnSaveMode": "file",
-				"editor.formatOnPaste": false,
+				"editor.formatOnPaste": true,
 				"editor.defaultFormatter": "esbenp.prettier-vscode",
-				"editor.fontSize": 16
+				"editor.fontSize": 16,
+				"editor.codeActionsOnSave": {
+					"source.fixAll": true,
+					"source.organizeImports": true
+				}
 			},
 			//"devPort": {},
 			// Specify which VS Code extensions to install (List of IDs)

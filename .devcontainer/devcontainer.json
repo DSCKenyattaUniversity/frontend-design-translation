@@ -56,7 +56,8 @@
 				"esbenp.prettier-vscode",
 				"dbaeumer.vscode-eslint",
 				"tombonnike.vscode-status-bar-format-toggle",
-				"dsznajder.es7-react-js-snippets"
+				"dsznajder.es7-react-js-snippets",
+				"styled-components.vscode-styled-components"
 			]
 		}
 	},

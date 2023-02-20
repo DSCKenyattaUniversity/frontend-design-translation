@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRef } from "react";
+import styled from "styled-components";
 
 export default function Header() {
 	const menuRef = useRef();
@@ -11,18 +11,20 @@ export default function Header() {
 
 	return (
 		<StyledHeader>
-			<div className="container">
-				<a href="/" alt="Edie" className="logo">
-					Edie
-				</a>
-				<MenuIcon onClick={toggleMenu} className="menu-icon" />
-			</div>
-			<div className="menu hidden" ref={menuRef}>
-				<a href="#home">Home</a>
-				<a href="#services">Services</a>
-				<a href="#our-works">Our Works</a>
-				<a href="#clients">Clients</a>
-				<a href="#contact">Contact</a>
+			<div id="contain-header">
+				<div className="container">
+					<a href="/" alt="Edie" className="logo">
+						Edie
+					</a>
+					<MenuIcon onClick={toggleMenu} className="menu-icon" />
+				</div>
+				<div className="menu hidden" ref={menuRef}>
+					<a href="#home">Home</a>
+					<a href="#services">Services</a>
+					<a href="#our-works">Our Works</a>
+					<a href="#clients">Clients</a>
+					<a href="#contact">Contact</a>
+				</div>
 			</div>
 		</StyledHeader>
 	);
@@ -34,18 +36,24 @@ const StyledHeader = styled.header`
 	padding: 12px 10px;
 	margin-bottom: 36px;
 
-	.menu-icon {
-		cursor: pointer;
+	@media only screen and (min-width: 768px) {
+		/* on tablet and desktops */
+		#contain-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.menu-icon {
+				display: none;
+			}
+		}
 	}
 
 	@media only screen and (min-width: 768px) {
-		/* on tablet and desktops */
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-
-		.menu-icon {
-			display: none;
+		#contain-header {
+			max-width: 768px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -55,7 +63,11 @@ const StyledHeader = styled.header`
 		justify-content: space-between;
 	}
 
-	& .logo {
+	.menu-icon {
+		cursor: pointer;
+	}
+
+	.logo {
 		display: block;
 		text-decoration: none;
 		font-family: "Heebo", sans-serif;

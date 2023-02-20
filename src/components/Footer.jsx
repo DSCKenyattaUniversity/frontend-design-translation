@@ -1,39 +1,41 @@
 import styled from "styled-components";
 
-import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
+import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
 import EmailInput from "./EmailInput";
 
 export default function Footer() {
 	return (
 		<StyledFooter>
-			<div className="top">
-				<div className="links">
-					<a href="#home">Home</a>
-					<a href="#services">Services</a>
-					<a href="#our-works">Our Works</a>
-					<a href="#clients">Clients</a>
-					<a href="#contact">Contact</a>
-				</div>
-				<div className="flex-mid" id="contact">
-					<p className="edie">Edie</p>
-					<div className="icons">
-						<img src={linkedin} alt="alt" />
-						<img src={instagram} alt="alt" />
-						<img src={twitter} alt="alt" />
+			<div className="contain-size">
+				<div className="top">
+					<div className="links">
+						<a href="#home">Home</a>
+						<a href="#services">Services</a>
+						<a href="#our-works">Our Works</a>
+						<a href="#clients">Clients</a>
+						<a href="#contact">Contact</a>
+					</div>
+					<div className="flex-mid" id="contact">
+						<p className="edie">Edie</p>
+						<div className="icons">
+							<img src={linkedin} alt="alt" />
+							<img src={instagram} alt="alt" />
+							<img src={twitter} alt="alt" />
+						</div>
+					</div>
+					<div className="contact-div">
+						<p style={{ color: "#828282", fontSize: 10 }}>
+							Want us to contact you?
+						</p>
+						<EmailInput bgColor="#F2F2F2" />
 					</div>
 				</div>
-				<div className="contact-div">
-					<p style={{ color: "#828282", fontSize: 10 }}>
-						Want us to contact you?
-					</p>
-					<EmailInput bgColor="#F2F2F2" />
-				</div>
+				<p className="bottom">
+					created by <span>Kijanda</span> - devchallenges.io
+				</p>
 			</div>
-			<p className="bottom">
-				created by <span>Kijanda</span> - devchallenges.io
-			</p>
 		</StyledFooter>
 	);
 }
@@ -52,6 +54,10 @@ const StyledFooter = styled.footer`
 		flex-direction: column;
 		gap: 4rem; /* 64x / 16px = 4rem */
 		margin-bottom: 5rem; /* 80px / 16px = 5rem*/
+		@media only screen and (min-width: 768px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
 		.links {
 			display: flex;

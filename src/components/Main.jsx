@@ -3,42 +3,45 @@ import Card from "./Card";
 import EmailInput from "./EmailInput";
 import OurWorkCard from "./OurWorkCard";
 
-import CreateIcon from "@mui/icons-material/Create";
 import CodeIcon from "@mui/icons-material/Code";
+import CreateIcon from "@mui/icons-material/Create";
 import StorageIcon from "@mui/icons-material/Storage";
 
 /* Images */
+import booking from "../assets/booking.png";
 import heroImage from "../assets/heroImage.jpg";
+import juiceProduct from "../assets/juice-product.png";
+import onboard from "../assets/onboard.png";
 import person1 from "../assets/person1.png";
 import person2 from "../assets/person2.png";
 import person3 from "../assets/person3.png";
 import person4 from "../assets/person4.png";
 import smarthome from "../assets/smarthome.jpg";
-import onboard from "../assets/onboard.png";
-import booking from "../assets/booking.png";
-import juiceProduct from "../assets/juice-product.png";
 
 export default function Main() {
 	const onSeeMoreClick = () => {};
 
 	return (
 		<StyledMain>
-			<section id="home">
+			<section id="home" className="contain-size">
 				<p className="tagline">Unhappy with your website?</p>
 				<h2 className="title">
 					We create beautiful and fast web services
 				</h2>
 				<img src={heroImage} alt="hero-pic" className="hero-image" />
-				<h2 className="title story">Story, emotion and purpose</h2>
-				<p className="content">
-					We help transform your ideas into real world applications
-					that will outperform your toughest competition and help you
-					achieve your strategic goals in short period of time.
-				</p>
-				<p className="contact-you">Want us to contact you?</p>
-				<EmailInput />
+				<div style={{ maxWidth: "50%" }}>
+					<h2 className="title story">Story, emotion and purpose</h2>
+					<p className="content">
+						We help transform your ideas into real world
+						applications that will outperform your toughest
+						competition and help you achieve your strategic goals in
+						short period of time.
+					</p>
+					<p className="contact-you">Want us to contact you?</p>
+					<EmailInput />
+				</div>
 			</section>
-			<section id="services">
+			<section id="services" className="contain-size">
 				<h2 className="title">We offer high demand services</h2>
 				<div className="row">
 					<Card
@@ -61,7 +64,7 @@ export default function Main() {
 					/>
 				</div>
 			</section>
-			<section id="our-works">
+			<section id="our-works" className="contain-size">
 				<h2 className="title">Good design means good business</h2>
 				<OurWorkCard
 					imgSrc={smarthome}
@@ -87,19 +90,23 @@ export default function Main() {
 					see more ➡
 				</button>
 			</section>
-			<section id="our-team">
-				<h3 className="subtitle">Meet the team</h3>
-				<h2 className="title">We are a chilled and laidback team</h2>
-				<p className="content">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</p>
+			<section id="our-team" className="contain-size">
+				<div>
+					<h3 className="subtitle">Meet the team</h3>
+					<h2 className="title">
+						We are a chilled and laidback team
+					</h2>
+					<p className="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+				</div>
 				<div className="img-container">
 					<img src={person3} className="img-1" alt="person 1" />
 					<img src={person1} className="img-2" alt="person 2" />
 					<img src={person2} className="img-3" alt="person 3" />
 				</div>
 			</section>
-			<section id="clients">
+			<section id="clients" className="contain-size">
 				<div className="client-review">
 					<p className="client-review__content">
 						“Fast and outstanding results. Edie understands their
@@ -134,6 +141,9 @@ const StyledMain = styled.main`
 		font-style: normal;
 		font-weight: 500;
 		font-size: 1.5rem; /* 24px */
+		@media only screen and (min-width: 768px) {
+			font-size: 2.25rem; /* 36px */
+		}
 		line-height: 36px;
 		color: #333333; /* Gray 1 */
 	}
@@ -145,12 +155,12 @@ const StyledMain = styled.main`
 	#home {
 		.tagline {
 			font-weight: 500;
-			font-size: 12px;
+			font-size: 0.75rem; /* 12px */
 			color: #2d9cdb;
 		}
 		.hero-image {
 			width: 100%;
-			height: 145px;
+			height: auto;
 			border-radius: 18px;
 			margin-bottom: 1.375rem; /* 22px */
 			object-fit: cover;
@@ -171,6 +181,18 @@ const StyledMain = styled.main`
 			line-height: 15px;
 			color: #828282; /* Gray 3 */
 		}
+		@media only screen and (min-width: 768px) {
+			h2.title {
+				font-size: 3rem; /* 48px */
+				line-height: 72px;
+			}
+			.tagline {
+				font-size: 1.125rem; /* 18px */
+			}
+			.content {
+				font-size: 1.125rem; /* 18px */
+			}
+		}
 	}
 
 	#services {
@@ -183,6 +205,7 @@ const StyledMain = styled.main`
 				/* on tablet and desktops */
 				flex-direction: row;
 				justify-content: space-between;
+				gap: 2.5rem; /* 40px */
 			}
 		}
 	}
@@ -202,9 +225,20 @@ const StyledMain = styled.main`
 			font-family: inherit;
 			cursor: pointer;
 		}
+		@media only screen and (min-width: 768px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 1.25rem; /* 20px */
+			row-gap: 3rem; /* 48px */
+		}
 	}
 
 	#our-team {
+		@media only screen and (min-width: 768px) {
+			display: flex;
+			gap: 2rem;
+			align-items: center;
+		}
 		.subtitle {
 			font-weight: 500;
 			font-size: 1.125rem; /* 18px */

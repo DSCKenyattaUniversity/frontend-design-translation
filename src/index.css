@@ -26,9 +26,16 @@ img {
 	padding-right: 1rem;
 }
 
-/* on tablets and desktops */
 /* @media only screen and (min-width: 768px) { 
-  .m-1 {
-    max-width: 768px;
-  }
+    .m-1 {
+        max-width: 768px;
+    }
 } */
+
+/* on tablets and desktops */
+@media only screen and (min-width: 768px) {
+	.contain-size {
+		max-width: 768px;
+		margin: 0 auto;
+	}
+}

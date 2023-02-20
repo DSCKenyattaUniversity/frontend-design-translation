@@ -94,7 +94,8 @@ const StyledHeader = styled.header`
 		}
 
 		a {
-			color: #e1d6d6;
+			/* color: #e1d6d6; */
+			color: #fff;
 			text-decoration: none;
 
 			&:hover {

@@ -29,7 +29,7 @@ export default function Main() {
 					We create beautiful and fast web services
 				</h2>
 				<img src={heroImage} alt="hero-pic" className="hero-image" />
-				<div style={{ maxWidth: "50%" }}>
+				<div className="container">
 					<h2 className="title story">Story, emotion and purpose</h2>
 					<p className="content">
 						We help transform your ideas into real world
@@ -66,29 +66,35 @@ export default function Main() {
 			</section>
 			<section id="our-works" className="contain-size">
 				<h2 className="title">Good design means good business</h2>
-				<OurWorkCard
-					imgSrc={smarthome}
-					type="Full stack application"
-					name="Smart home dashboard"
-				/>
-				<OurWorkCard
-					imgSrc={onboard}
-					type="UX/UI design"
-					name="Onboard application"
-				/>
-				<OurWorkCard
-					imgSrc={booking}
-					type="Mobile application"
-					name="Booking system"
-				/>
-				<OurWorkCard
-					imgSrc={juiceProduct}
-					type="Front End application"
-					name="Juice product homepage"
-				/>
-				<button className="see-more" onClick={onSeeMoreClick}>
-					see more ➡
-				</button>
+				<div className="grid">
+					<OurWorkCard
+						imgSrc={smarthome}
+						type="Full stack application"
+						name="Smart home dashboard"
+						className="one"
+					/>
+					<OurWorkCard
+						imgSrc={onboard}
+						type="UX/UI design"
+						name="Onboard application"
+						className="two"
+					/>
+					<OurWorkCard
+						imgSrc={booking}
+						type="Mobile application"
+						name="Booking system"
+						className="three"
+					/>
+					<OurWorkCard
+						imgSrc={juiceProduct}
+						type="Front End application"
+						name="Juice product homepage"
+						className="four"
+					/>
+					<button className="see-more" onClick={onSeeMoreClick}>
+						see more ➡
+					</button>
+				</div>
 			</section>
 			<section id="our-team" className="contain-size">
 				<div>
@@ -192,6 +198,9 @@ const StyledMain = styled.main`
 			.content {
 				font-size: 1.125rem; /* 18px */
 			}
+			.container {
+				max-width: 50%;
+			}
 		}
 	}
 
@@ -217,7 +226,8 @@ const StyledMain = styled.main`
 
 		.see-more {
 			padding: 0;
-			background: none;
+			background-image: none;
+			background-color: transparent;
 			border: none;
 			color: #2d9cdb;
 			font-size: 18px;
@@ -226,10 +236,45 @@ const StyledMain = styled.main`
 			cursor: pointer;
 		}
 		@media only screen and (min-width: 768px) {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			column-gap: 1.25rem; /* 20px */
-			row-gap: 3rem; /* 48px */
+			.title {
+				margin-bottom: 0.75px; /* 12px */
+				max-width: 50%;
+			}
+			.grid {
+				display: grid;
+				column-gap: 1.25rem; /* 20px */
+				row-gap: 3rem; /* 48px */
+				grid-template-areas:
+					". b"
+					"a b"
+					"a b"
+					"a b"
+					"a d"
+					"c d"
+					"c d"
+					"c d"
+					"c e";
+
+				div:nth-child(1) {
+					grid-area: a;
+				}
+				div:nth-child(2) {
+					grid-area: b;
+				}
+				div:nth-child(3) {
+					grid-area: c;
+				}
+				div:nth-child(4) {
+					grid-area: d;
+				}
+				.see-more {
+					grid-area: e;
+				}
+			}
+			.see-more {
+				display: block;
+				margin-left: auto;
+			}
 		}
 	}
 

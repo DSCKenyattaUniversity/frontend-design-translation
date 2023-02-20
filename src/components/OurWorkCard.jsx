@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
-export default function OurWorkCard({ imgSrc, type, name, mb = 36 }) {
+export default function OurWorkCard({
+	imgSrc,
+	type,
+	name,
+	className,
+	mb = 36,
+}) {
 	return (
-		<StyledCard style={{ marginBottom: mb }}>
+		<StyledCard style={{ marginBottom: mb }} className={className}>
 			<img src={imgSrc} alt="..." className="work-img" />
 			<p className="work-type">{type}</p>
 			<p className="work-name">{name}</p>
